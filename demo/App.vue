@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Test from "@/components/Test.vue";
+import HeaderUpdater from "@/components/HeaderUpdater.vue";
 </script>
 
 <template>
   <main>
-    <Test />
+    <HeaderUpdater />
   </main>
 </template>
 
