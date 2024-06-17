@@ -1,0 +1,33 @@
+name: TestVuePackage
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permision:
+      contents: read
+      pull: read
+      push: write
+      packages: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@romx98'
+      
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Build library 
+        run: npm run build
+      
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

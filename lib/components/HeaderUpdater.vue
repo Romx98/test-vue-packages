@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const inputText = ref("");
-const headerText = ref("");
+const inputText = ref<string>("");
+const headerText = ref<string>("");
 
-function updateHeader() {
+function updateHeader(): void {
   headerText.value = inputText.value;
 }
 </script>

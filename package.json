@@ -1,15 +1,28 @@
 {
-  "name": "test-vue-packages",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@romx98/test-vue-packages",
+  "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "main": "dist/test-vue-packages.js",
+  "module": "dist/test-vue-packages.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/test-vue-packages.js",
+      "require": "./dist/test-vue-packages.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "build": "vite build",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types"
   },
+  "keywords": [
+    "vue"
+  ],
   "dependencies": {
     "vue": "^3.4.21"
   },
@@ -21,6 +34,7 @@
     "npm-run-all2": "^6.1.2",
     "typescript": "~5.4.0",
     "vite": "^5.2.8",
+    "vite-plugin-dts": "^3.9.1",
     "vue-tsc": "^2.0.11"
   }
 }
