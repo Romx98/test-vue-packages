@@ -8,10 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permision:
+    permissions:
       contents: read
-      pull: read
-      push: write
       packages: write
     
     steps:
