@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     dts({
       entryRoot: "lib",
-      outDir: "dist/types",
+      outDir: "dist",
       tsconfigPath: "./tsconfig.json",
     }),
   ],

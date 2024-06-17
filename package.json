@@ -3,13 +3,22 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "main": "dist/test-vue-packages.js",
-  "module": "dist/test-vue-packages.umd.cjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romx98/test-vue-packages.git"
+  },
+  "main": "./dist/test-vue-packages.umd.cjs",
+  "module": "./dist/test-vue-packages.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/test-vue-packages.js",
       "require": "./dist/test-vue-packages.umd.cjs",
       "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "files": [

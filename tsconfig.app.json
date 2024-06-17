@@ -10,7 +10,10 @@
   ],
   "exclude": ["lib/**/__tests__/*"],
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "composite": true,
+    "noImplicitAny": false,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "declarationDir": "types",
     "outDir": "dist",
